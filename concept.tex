@@ -1,0 +1,77 @@
+\documentclass{beamer}
+\usetheme{Madrid}
+\usepackage{pifont}
+\usepackage{amsmath}
+\usepackage{geometry} 
+\usepackage{svg}
+\usepackage{graphicx} 
+
+\graphicspath{ {./assets/} }
+
+
+
+
+\title{Adaptasi Positional Encoding pada Arsitektur Transformer untuk Sintesis Notasi Gamelan yang Koheren dan Terkendali}
+\author{Arif Akbarul Huda}
+
+\begin{document}
+	\begin{frame}
+		\titlepage
+	\end{frame}
+
+	\begin{frame}
+		\frametitle{Rumusan Masalah}
+		Masalah utama dalam penelitian ini terletak pada upaya \textbf{mempertahankan koherensi musikal} dalam komputasi notasi musik gamelan. Meskipun pendekatan berbasis Algoritma Genetika dan arsitektur Recurrent Neural Network (RNN) terbukti efektif dalam menghasilkan komposisi notasi, keduanya masih gagal menjaga koherensi tematik jangka panjang. Kelemahan tersebut mengakibatkan ciri khas notasi gamelan memudar seiring bertambahnya panjang sekuen. Selain itu, keterbatasan model dalam menangani struktur sekuensial yang panjang serta tidak adanya mekanisme intervensi pengguna menyebabkan sistem belum mampu mewujudkan koherensi tematik melalui pengendalian struktur dan genre musikal secara adaptif.
+	\end{frame}
+	
+	\begin{frame}
+		\frametitle{Progress}
+		\begin{itemize}
+			\item Koherensi Musikal
+			\item Sequence Modeling
+			\item User in the loop System
+		\end{itemize}
+	\end{frame}
+
+	\begin{frame}
+			\begin{figure}
+			\centering
+			\includegraphics[width=0.7\linewidth]{pitch-mismatch.png}
+			\caption{Contoh pitch mismatch method}			
+		\end{figure}
+	
+	Fu X, Deng H, Yuan X, Hu J. Generating High Coherence Monophonic Music Using Monte-Carlo Tree Search. IEEE Trans Multimedia. 2023;25:3763–72. 
+	\end{frame}
+
+	\begin{frame}
+		\frametitle{P.O.C}
+		\begin{itemize}
+			\item Bagana membuktikan incoherence?
+			\item Reverese Paper :  LSTM, BiLSTM, G.A. Small prev dataset Gamelan
+			\item Objective : Function untuk scoring tingkat coherence pada gamelan
+		\end{itemize}
+	\end{frame}
+
+	\begin{frame}
+		
+		\begin{figure}
+			\centering
+			\includegraphics[height=0.3 \linewidth]{syarif-lstm-gamelan.png}
+			\caption{Rebuild LSTM}			
+		\end{figure}
+		(Input layer 19 , Hidden layer 200 units) Attempt more than 10x.
+		Syarif AM, Azhari A, Suprapto S, Hastuti K. Gamelan Melody Generation Using LSTM Networks Controlled by Composition Meter Rules and Special Notes. JAIT [Internet]. 2023 [cited 2025 June 9]; Available from: http://www.jait.us/show-224-1287-1.html
+	
+	\end{frame}
+
+	\begin{frame}
+	\begin{figure}
+		\centering
+		\includegraphics[height=0.3 \linewidth]{lstm-gamelan.png}
+		\caption{Rebuild LSTM with GA}			
+	\end{figure}
+	(Input layer 17 , Hidden layer 200 units)
+	Fanani AZ, Maulana Syarif A, Novita Dewi I, Karim A. Enhancing Creativity and Validation in Explanatory Deep Learning-Based Symbolic Music Generation: A Hybrid Approach With LSTM and Genetic Algorithms. IEEE Access. 2025;13:105280–301. 
+	\end{frame}
+	
+\end{document}
