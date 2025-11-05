@@ -23,39 +23,115 @@
 		\frametitle{Rumusan Masalah}
 		Model LSTM pembangkit notasi gamelan yang dikembangkan oleh Fanani, A.Z. dkk. (2025) gagal menangkap relasi tersirat antarnotasi. Mekanisme pengacakan Algoritma Genetika (GA) digunakan Fanani, A.Z. dkk. (2025) untuk menangani kelemahan LSTM tersebut, tetapi GA justru berpotensi merusak struktur koherensi seluruh notasi. Kondisi tersebut mengakibatkan peran notasi terhadap keseluruhan struktur terabaikan sehingga ciri khas notasi dan identitas musikal gamelan memudar seiring bertambah panjangnya sekuens notasi. Apabila hal ini tidak diatasi, koherensi tematik dalam komposisi notasi gamelan tidak terwujud. Oleh karena itu diperlukan pendekatan baru, model pembangkit notasi gamelan yang dapat mempertimbangkan peran tersirat setiap notasi dalam struktur lagu melalui mekanisme perhatian (attention mechanism).
 	\end{frame}
+	
 	\begin{frame}
-		\frametitle{Original Result LSTM}
+	\frametitle{Paper to be rebuild}
+		 Syarif AM, Azhari A, Suprapto S, Hastuti K. Gamelan Melody Generation Using LSTM Networks Controlled by Composition Meter Rules and Special Notes. JAIT [Internet]. 2023 [cited 2025 June 9]; Available from: http://www.jait.us/show-224-1287-1.html
+	\end{frame}
+	
+	\begin{frame}
+		
+		\frametitle{Rebuild}
 		\begin{figure}
 			\centering
-			\includegraphics[height=0.3 \linewidth]{original-lstm.png}
-			\caption{Original Training Result Gamelan with LSTM}			
-		\end{figure}		
-	\end{frame}	
-	\begin{frame}
-		\frametitle{Reverse Engineering LSTM}
-		\begin{figure}
-			\centering
-			\includegraphics[height=0.3 \linewidth]{reverse-code-40hl.png}
-			\caption{Training Result Gamelan with LSTM}			
+			\includegraphics[width=1 \linewidth]{input-seq.png}
+			\caption{Rebuild}			
 		\end{figure}		
 	\end{frame}
 
 	\begin{frame}
-		\frametitle{Original Training Perform. Report LSTM}
+		
+		\frametitle{Rebuild}
 		\begin{figure}
 			\centering
-			\includegraphics[height=0.3 \linewidth]{original-lstm-report-performance.png}
-			\caption{Original Report LSTM}			
+			\includegraphics[height=0.7 \linewidth]{lstm-arch.JPEG}
+			\caption{Rebuild}			
 		\end{figure}		
 	\end{frame}
-
+	
+	\begin{frame}
+		\frametitle{Original vs Rebuild - LSTM}
+		
+		% Begin the columns environment
+		\begin{columns}
+			
+			% --- First Column (Left Image) ---
+			\begin{column}{0.5\textwidth}
+				\begin{figure}
+					\centering
+					\includegraphics[height=1 \linewidth]{original-lstm.png}
+					\caption{Original}			
+				\end{figure}		
+			\end{column}
+			
+			% --- Second Column (Right Image) ---
+			\begin{column}{0.5\textwidth}
+				\begin{figure}
+					\centering
+					\includegraphics[height=1 \linewidth]{reverse-code-40hl.png}
+					\caption{Rebuild}			
+				\end{figure}		
+			\end{column}
+			
+		\end{columns}
+		
+	\end{frame}
+	
+	\begin{frame}
+		\frametitle{Original vs Rebuild - LSTM}	% Begin the columns environment
+		\begin{columns}
+		
+			% --- First Column (Left Image) ---
+			\begin{column}{0.5\textwidth}
+				\begin{figure}
+					\centering
+					\includegraphics[width=1 \linewidth]{original-lstm-report-performance.png}
+					\caption{Original Report LSTM}			
+				\end{figure}		
+			\end{column}
+			
+			% --- Second Column (Right Image) ---
+			\begin{column}{0.5\textwidth}
+				\begin{figure}
+					\centering
+					\includegraphics[width=1 \linewidth]{rebuild-report-performance.png}
+					\caption{Rebuild}			
+				\end{figure}		
+			\end{column}
+		\end{columns}
+	\end{frame}
+	
+	\begin{frame}
+		\frametitle{Original vs Rebuild - LSTM}
+		
+		% Begin the columns environment
+		\begin{columns}
+			
+			% --- First Column (Left Image) ---
+			\begin{column}{0.5\textwidth}
+				\begin{figure}
+					\centering
+					\includegraphics[height=1 \linewidth]{ltsm-ga.png}
+					\caption{Original}			
+				\end{figure}		
+			\end{column}
+			
+			% --- Second Column (Right Image) ---
+			\begin{column}{0.5\textwidth}
+				Fanani AZ, Maulana Syarif A, Novita Dewi I, Karim A. Enhancing Creativity and Validation in Explanatory Deep Learning-Based Symbolic Music Generation: A Hybrid Approach With LSTM and Genetic Algorithms. IEEE Access. 2025;13:105280–301. 
+				
+			\end{column}
+			
+		\end{columns}
+		
+	\end{frame}
 	\begin{frame}
 		\frametitle{Rebuild Training Perform. Report LSTM}
 		\begin{figure}
 			\centering
-			\includegraphics[height=0.3 \linewidth]{rebuild-report-performance.png}
-			\caption{Rebuild Report LSTM}			
-		\end{figure}		
+			\includegraphics[width=0.7\linewidth]{pitch-mismatch.png}
+			\caption{Contoh pitch mismatch method}			
+		\end{figure}
 	\end{frame}
 	\begin{frame}
 		\frametitle{Progress}
