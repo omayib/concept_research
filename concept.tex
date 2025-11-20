@@ -20,11 +20,6 @@
 		\titlepage
 	\end{frame}
 
-	\begin{frame}
-		\frametitle{Rumusan Masalah}
-		Model LSTM pembangkit notasi gamelan yang dikembangkan oleh Fanani, A.Z. dkk. (2025) gagal menangkap relasi tersirat antarnotasi. Mekanisme pengacakan Algoritma Genetika (GA) digunakan Fanani, A.Z. dkk. (2025) untuk menangani kelemahan LSTM tersebut, tetapi GA justru berpotensi merusak struktur koherensi seluruh notasi. Kondisi tersebut mengakibatkan peran notasi terhadap keseluruhan struktur terabaikan sehingga ciri khas notasi dan identitas musikal gamelan memudar seiring bertambah panjangnya sekuens notasi. Apabila hal ini tidak diatasi, koherensi tematik dalam komposisi notasi gamelan tidak terwujud. Oleh karena itu diperlukan pendekatan baru, model pembangkit notasi gamelan yang dapat mempertimbangkan peran tersirat setiap notasi dalam struktur lagu melalui mekanisme perhatian (attention mechanism).
-	\end{frame}
-	
 	
 	\begin{frame}
 		\frametitle{Previous Work}
@@ -68,7 +63,7 @@
 		\frametitle{Insight}
 		\begin{figure}
 			\centering
-			\includegraphics[width=1 \linewidth]{frekuensi-slendro-pelog.png}
+			\includegraphics[width=1  \linewidth]{frekuensi-slendro-pelog.png}
 			\caption{Frekuensi fundamental tiap nada gender}			
 		\end{figure}
 	\end{frame}
@@ -214,12 +209,48 @@
 
 
 	\begin{frame}
-		\frametitle{Experiment}
+		\frametitle{Book Reference}
+			\begin{columns}
+			
+			% --- First Column (Left Image) srepeg-tlutur-sl-sanga.png---
+			\begin{column}{0.3\textwidth}
+				\begin{figure}
+					\centering
+					\includegraphics[height=1.5 \linewidth]{kitab-karawitan.jpeg}
+				\end{figure}
+			\end{column}
+			
+			% --- Second Column (Right Image) ---
+			\begin{column}{0.7\textwidth}
+				\begin{itemize}
+					\item \tiny Martopangrawit RL, Hatch MF. CATATAN-CATATAN PENGETAHUAN KARAWITAN: Volume I. In: Becker J, Feinstein AH, editors. Karawitan [Internet]. University of Michigan Press; 1984 [cited 2025 Nov 19]. p. 1–122. (Source Readings in Javanese Gamelan and Vocal Music, Volume 1). Available from: https://www.jstor.org/stable/10.3998/mpub.17580.4
+					\item \tiny Martopangrawit RL, Hatch MF. CATATAN-CATATAN PENGETAHUAN KARAWITAN: Volume 2. In: Becker J, Feinstein AH, editors. Karawitan [Internet]. University of Michigan Press; 1984 [cited 2025 Nov 19]. p. 123–244. (Source Readings in Javanese Gamelan and Vocal Music, Volume 1). Available from: https://www.jstor.org/stable/10.3998/mpub.17580.5
+					
+					
+				\end{itemize}
+				
+				
+			\end{column}
+		\end{columns}
+	\end{frame}
+	
+	\begin{frame}
+		\frametitle{Insight}
+		Martopangrawit menjelaskan bahwa dalam satu Gatra (unit 4 ketukan), terdapat distribusi berat/tekanan (stress).
+		\begin{itemize}
+			\item \textbf{Ketukan ke-4 (Sele/Seleh)}: Memiliki bobot paling berat (target nada/resolusi).
+			
+			\item \textbf{Ketukan ke-2}: Memiliki bobot berat (tapi tidak seberat ketukan ke-4). Sering disebut sebagai titik tumpuan tengah.
+			
+			\item \textbf{Ketukan 1 dan 3}: Memiliki bobot ringan (ketukan gantung).
+			
+		\end{itemize}
 		\begin{figure}
 			\centering
-			\includegraphics[height=0.5 \linewidth]{plot-struktur-gamelan.png}
-			\caption{Buku Referensi}			
+			\includegraphics[width=0.5 \linewidth]{maju-mundur-seleh.png}
 		\end{figure}
+		
+		
 	\end{frame}
 	
 
@@ -238,7 +269,6 @@
 			% --- Right Column (Row 1, Col 2) ---
 			\begin{column}{0.48\textwidth}
 				\centering
-				\textbf{Figure B}
 				\includegraphics[width=0.9\linewidth]{cmap-font-balungan.png}
 				\footnotesize{Cmap font balungan.}
 			\end{column}
@@ -288,8 +318,31 @@
 	\end{frame}
 	
 	
+	\begin{frame}
+		\frametitle{Rumusan Masalah}
+		\framesubtitle{Cont..}
+		\small Model LSTM pembangkit notasi gamelan yang dikembangkan oleh Syarif, A.M. dkk. (2023) memiliki keterbatasan pada aspek representasi data. \textbf{Notasi musik direpresentasikan deretan angka tanpa makna struktural}. Akibatnya, informasi penting mengenai bobot ketukan dalam Gatra (posisi seleh dan wilet) hilang. Model bekerja hanya berdasarkan probabilitas sekuens terdekat (lokal). Hal ini \textbf{menyebabkan kegagalan} model dalam menangkap dependensi struktural jangka panjang yang menjadi logika dasar musik gamelan.
+		
+		
+	\end{frame}
+	\begin{frame}
+		\frametitle{Rumusan Masalah}
+		\framesubtitle{Cont..}
+		\small 
+		
+		Upaya mitigasi melalui pendekatan hibrida oleh Fanani, A.Z. dkk. (2025) mengandung \textbf{kontradiksi desain}. Algoritma Genetika (GA) digunakan tanpa operator crossover dengan premis bahwa output LSTM memiliki kualitas pola yang baik, namun secara paradoks menggunakan mekanisme mutasi intensif untuk menangani tingginya inakurasi. Tanpa crossover, GA terdegradasi menjadi pencarian acak yang tidak mewariskan fitur musikal unggul. \textbf{Akibatnya}, mekanisme validasi bekerja secara reaktif lokal. Sistem melakukan "tambal sulam" stokastik demi tercapainya validitas aturan dengan mengorbankan struktur melodis secara global.
+		
+	\end{frame}
+	\begin{frame}
+		\frametitle{Rumusan Masalah}
+		\framesubtitle{Cont..}
+		\small 
+		
+		Kombinasi keterbatasan tersebut menciptakan kesenjangan ilmiah yakni \textbf{belum tersedia model generatif yang mampu menyelaraskan kepatuhan aturan dan koherensi sekuensial dalam satu arsitektur terpadu}. Apabila tidak diatasi, model generatif akan terus memproduksi karya yang menyerupai gamelan namun cacat logika internal atau halusinasi algoritmik.
+	\end{frame}
 
 	\begin{frame}
+		\frametitle{Mismatch Coherence Strategy}
 			\begin{figure}
 			\centering
 			\includegraphics[width=0.7\linewidth]{pitch-mismatch.png}
