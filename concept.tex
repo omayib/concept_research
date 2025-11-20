@@ -212,16 +212,67 @@
 		
 	\end{frame}
 
+
 	\begin{frame}
-		\frametitle{Original vs Rebuild - LSTM}	% Begin the columns environment
+		\frametitle{Experiment}
+		\begin{figure}
+			\centering
+			\includegraphics[height=0.5 \linewidth]{plot-struktur-gamelan.png}
+			\caption{Buku Referensi}			
+		\end{figure}
+	\end{frame}
+	
+
+	\begin{frame}
+		\frametitle{Experimental Ideas}	% Begin the columns environment
+		
+		% 1. TOP ROW: TWO COLUMNS (50% each)
+		\begin{columns}
+			% --- Left Column (Row 1, Col 1) ---
+			\begin{column}{0.48\textwidth}
+				\centering
+				\includegraphics[width=0.9\linewidth]{notasi-ayak-nem-slendro.png}
+				\footnotesize{Notasi gamelan Ayak-ayakan Nem Slendro pt. Nem}
+			\end{column}
+			
+			% --- Right Column (Row 1, Col 2) ---
+			\begin{column}{0.48\textwidth}
+				\centering
+				\textbf{Figure B}
+				\includegraphics[width=0.9\linewidth]{cmap-font-balungan.png}
+				\footnotesize{Cmap font balungan.}
+			\end{column}
+		\end{columns}
+		
+		% Optional: Add a small vertical space between the rows
+		\vspace{0.5em}
+		\hrule % Optional: A horizontal line to visually separate the rows
+		
+		% 2. BOTTOM ROW: ONE MERGED COLUMN
+		% We use \vfill to push the content to the bottom and a minipage to control its width
+		\vfill 
+		\begin{minipage}{\textwidth} % Minipage spans the full text width
+			\centering
+			
+			\begin{figure}
+				\centering
+				\includegraphics[width=1 \linewidth]{notasi-ayak-nem-slendro-decoded.png}
+				\caption{Notasi ayakan decoded}			
+			\end{figure}
+		\end{minipage}
+		
+	\end{frame}
+
+	\begin{frame}
+		\frametitle{Experimental Ideas}	% Begin the columns environment
 		\begin{columns}
 		
-			% --- First Column (Left Image) ---
+			% --- First Column (Left Image) srepeg-tlutur-sl-sanga.png---
 			\begin{column}{0.5\textwidth}
 				\begin{figure}
 					\centering
-					\includegraphics[width=1 \linewidth]{original-lstm-report-performance.png}
-					\caption{Original Report LSTM}			
+					\includegraphics[width=1 \linewidth]{srepeg-tlutur-sl-sanga.png}
+					\caption{Notasi Gamelan}			
 				\end{figure}		
 			\end{column}
 			
@@ -229,53 +280,14 @@
 			\begin{column}{0.5\textwidth}
 				\begin{figure}
 					\centering
-					\includegraphics[width=1 \linewidth]{rebuild-report-performance.png}
-					\caption{Rebuild}			
+					\includegraphics[width=1 \linewidth]{plot-struktur-gamelan.png}
+					\caption{Plot Struktur}			
 				\end{figure}		
 			\end{column}
 		\end{columns}
 	\end{frame}
 	
-	\begin{frame}
-		\frametitle{Original vs Rebuild - LSTM}
-		
-		% Begin the columns environment
-		\begin{columns}
-			
-			% --- First Column (Left Image) ---
-			\begin{column}{0.5\textwidth}
-				\begin{figure}
-					\centering
-					\includegraphics[height=1 \linewidth]{ltsm-ga.png}
-					\caption{Original}			
-				\end{figure}		
-			\end{column}
-			
-			% --- Second Column (Right Image) ---
-			\begin{column}{0.5\textwidth}
-				Fanani AZ, Maulana Syarif A, Novita Dewi I, Karim A. Enhancing Creativity and Validation in Explanatory Deep Learning-Based Symbolic Music Generation: A Hybrid Approach With LSTM and Genetic Algorithms. IEEE Access. 2025;13:105280–301. 
-				
-			\end{column}
-			
-		\end{columns}
-		
-	\end{frame}
-	\begin{frame}
-		\frametitle{Rebuild Training Perform. Report LSTM}
-		\begin{figure}
-			\centering
-			\includegraphics[width=0.7\linewidth]{pitch-mismatch.png}
-			\caption{Contoh pitch mismatch method}			
-		\end{figure}
-	\end{frame}
-	\begin{frame}
-		\frametitle{Progress}
-		\begin{itemize}
-			\item Koherensi Musikal
-			\item Sequence Modeling
-			\item User in the loop System
-		\end{itemize}
-	\end{frame}
+	
 
 	\begin{frame}
 			\begin{figure}
@@ -294,28 +306,6 @@
 			\item Reverese Paper :  LSTM, BiLSTM, G.A. Small prev dataset Gamelan
 			\item Objective : Function untuk scoring tingkat coherence pada gamelan
 		\end{itemize}
-	\end{frame}
-
-	\begin{frame}
-		
-		\begin{figure}
-			\centering
-			\includegraphics[height=0.3 \linewidth]{syarif-lstm-gamelan.png}
-			\caption{Rebuild LSTM}			
-		\end{figure}
-		(Input layer 19 , Hidden layer 200 units) Attempt more than 10x.
-		Syarif AM, Azhari A, Suprapto S, Hastuti K. Gamelan Melody Generation Using LSTM Networks Controlled by Composition Meter Rules and Special Notes. JAIT [Internet]. 2023 [cited 2025 June 9]; Available from: http://www.jait.us/show-224-1287-1.html
-	
-	\end{frame}
-
-	\begin{frame}
-	\begin{figure}
-		\centering
-		\includegraphics[height=0.3 \linewidth]{lstm-gamelan.png}
-		\caption{Rebuild LSTM with GA}			
-	\end{figure}
-	(Input layer 17 , Hidden layer 200 units)
-	Fanani AZ, Maulana Syarif A, Novita Dewi I, Karim A. Enhancing Creativity and Validation in Explanatory Deep Learning-Based Symbolic Music Generation: A Hybrid Approach With LSTM and Genetic Algorithms. IEEE Access. 2025;13:105280–301. 
 	\end{frame}
 	
 \end{document}
