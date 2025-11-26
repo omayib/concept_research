@@ -19,21 +19,18 @@
 	\begin{frame}
 		\titlepage
 	\end{frame}
-
 	
 	\begin{frame}
 		\frametitle{Previous Work}
-		\framesubtitle{Original vs Rebuild - LSTM}
-		\tiny Syarif AM, Azhari A, Suprapto S, Hastuti K. Gamelan Melody Generation Using LSTM Networks Controlled by Composition Meter Rules and Special Notes. JAIT [Internet]. 2023 [cited 2025 June 9]; Available from: http://www.jait.us/show-224-1287-1.html
-		% Begin the columns environment
+		\framesubtitle{Plotting Structure}
 		\begin{columns}
 			
-			% --- First Column (Left Image) ---
+			% --- First Column (Left Image) srepeg-tlutur-sl-sanga.png---
 			\begin{column}{0.5\textwidth}
 				\begin{figure}
 					\centering
-					\includegraphics[height=0.75 \linewidth]{original-lstm.png}
-					\caption{Original}			
+					\includegraphics[width=1 \linewidth]{srepeg-tlutur-sl-sanga.png}
+					\caption{Notasi Gamelan}			
 				\end{figure}		
 			\end{column}
 			
@@ -41,32 +38,94 @@
 			\begin{column}{0.5\textwidth}
 				\begin{figure}
 					\centering
-					\includegraphics[height=0.75 \linewidth]{reverse-code-40hl.png}
-					\caption{Rebuild}			
+					\includegraphics[width=1 \linewidth]{plot-struktur-gamelan.png}
+					\caption{Plot Struktur}			
 				\end{figure}		
 			\end{column}
-			
 		\end{columns}
-		
-	\end{frame}
-	
-	
-	\begin{frame}
-		\frametitle{Insight}
-		\begin{figure}
-			\centering
-			\includegraphics[height=0.5 \linewidth]{fisika-bunyi-gamelan.png}
-			\caption{Buku Referensi}			
-		\end{figure}
 	\end{frame}
 
 	\begin{frame}
 		\frametitle{Insight}
 		\begin{figure}
 			\centering
-			\includegraphics[width=1  \linewidth]{frekuensi-slendro-pelog.png}
-			\caption{Frekuensi fundamental tiap nada gender}			
+			\includegraphics[height=0.5 \linewidth]{book-fundamental-music-processing.png}
+			\caption{Buku Referensi}			
 		\end{figure}
+	\end{frame}
+
+	\begin{frame}
+		\frametitle{Insight}
+		\framesubtitle{Chapter 4. Music Structure Analysis}
+		\begin{columns}
+			
+			% --- First Column (Left Image) srepeg-tlutur-sl-sanga.png--- structural-analysis.png
+			\begin{column}{0.5 \textwidth}
+				\begin{figure}
+					\centering
+					\includegraphics[width=1 \linewidth]{structural-analysis.png}
+					\caption{4.1. From the book}
+				\end{figure}
+			\end{column}
+			
+			% --- Second Column (Right Image) ---
+			\begin{column}{0.5 \textwidth}
+				The General Goal of Music Structural Analysis
+				\begin{itemize}
+					\item  Temporal Segmentation
+					\item  Structural Identification
+					\item  Categorical Grouping
+				\end{itemize}
+				The methods
+				\begin{itemize}
+					\item  Repition-based
+					\item  Novelty-based
+					\item  Homogeneity-based
+				\end{itemize}
+				
+			\end{column}
+		\end{columns}
+	\end{frame}
+	\begin{frame}
+		\frametitle{Insight}
+		\framesubtitle{Chapter 4. Music Structure Analysis}
+		\begin{columns}
+			
+			% --- First Column (Left Image) srepeg-tlutur-sl-sanga.png--- structural-analysis.png
+			\begin{column}{0.5 \textwidth}
+				\begin{figure}
+					\centering
+					\includegraphics[width=1 \linewidth]{structure-annotatoins-labeling-evaluation.png}
+					\caption{4.30. From the book}
+				\end{figure}
+			\end{column}
+			
+			% --- Second Column (Right Image) ---
+			\begin{column}{0.5 \textwidth}
+				Evaluation
+				\begin{itemize}
+					\item  Precision, Recall, F-Measure
+					\item  Structure Annotations
+					\item  Labeling Eval.
+					\item  Boundary Eval.
+					\item  Thumbnail Eval.
+				\end{itemize}
+				
+			\end{column}
+		\end{columns}
+	\end{frame}
+	\begin{frame}
+		\frametitle{Insight}
+		
+		
+		Subjective evaluation are
+		\begin{itemize}
+			\item  Unscalable
+			\item  Inability to Guide Improvement
+			\item  Missing the "Why"
+		\end{itemize}
+	 	\vspace{1cm}
+		\tiny de Berardinis, J., Cangelosi, A. and Coutinho, E. (2022) “Measuring the Structural Complexity of Music: From Structural Segmentations to the Automatic Evaluation of Models for Music Generation,” IEEE/ACM Transactions on Audio, Speech, and Language Processing, 30, pp. 1963–1976. Available at: https://doi.org/10.1109/TASLP.2022.3178203.
 	\end{frame}
 
 	
@@ -209,31 +268,6 @@
 	\end{frame}
 
 
-	\begin{frame}
-		\frametitle{Book Reference}
-			\begin{columns}
-			
-			% --- First Column (Left Image) srepeg-tlutur-sl-sanga.png---
-			\begin{column}{0.3\textwidth}
-				\begin{figure}
-					\centering
-					\includegraphics[height=1.5 \linewidth]{kitab-karawitan.jpeg}
-				\end{figure}
-			\end{column}
-			
-			% --- Second Column (Right Image) ---
-			\begin{column}{0.7\textwidth}
-				\begin{itemize}
-					\item \tiny Martopangrawit RL, Hatch MF. CATATAN-CATATAN PENGETAHUAN KARAWITAN: Volume I. In: Becker J, Feinstein AH, editors. Karawitan [Internet]. University of Michigan Press; 1984 [cited 2025 Nov 19]. p. 1–122. (Source Readings in Javanese Gamelan and Vocal Music, Volume 1). Available from: https://www.jstor.org/stable/10.3998/mpub.17580.4
-					\item \tiny Martopangrawit RL, Hatch MF. CATATAN-CATATAN PENGETAHUAN KARAWITAN: Volume 2. In: Becker J, Feinstein AH, editors. Karawitan [Internet]. University of Michigan Press; 1984 [cited 2025 Nov 19]. p. 123–244. (Source Readings in Javanese Gamelan and Vocal Music, Volume 1). Available from: https://www.jstor.org/stable/10.3998/mpub.17580.5
-					
-					
-				\end{itemize}
-				
-				
-			\end{column}
-		\end{columns}
-	\end{frame}
 	
 	\begin{frame}
 		\frametitle{Insight}
@@ -294,29 +328,7 @@
 		
 	\end{frame}
 
-	\begin{frame}
-		\frametitle{Experimental Ideas}	% Begin the columns environment
-		\begin{columns}
-		
-			% --- First Column (Left Image) srepeg-tlutur-sl-sanga.png---
-			\begin{column}{0.5\textwidth}
-				\begin{figure}
-					\centering
-					\includegraphics[width=1 \linewidth]{srepeg-tlutur-sl-sanga.png}
-					\caption{Notasi Gamelan}			
-				\end{figure}		
-			\end{column}
-			
-			% --- Second Column (Right Image) ---
-			\begin{column}{0.5\textwidth}
-				\begin{figure}
-					\centering
-					\includegraphics[width=1 \linewidth]{plot-struktur-gamelan.png}
-					\caption{Plot Struktur}			
-				\end{figure}		
-			\end{column}
-		\end{columns}
-	\end{frame}
+
 	
 	
 	\begin{frame}
