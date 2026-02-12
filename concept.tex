@@ -6,6 +6,11 @@
 \usepackage{svg}
 \usepackage{graphicx}
 \usepackage{tikz}
+\usepackage{booktabs}
+\usepackage{array}
+\usepackage{hyperref}
+\usepackage{url}
+\usepackage{ragged2e}
 \usetikzlibrary{shapes.geometric, arrows, positioning}
 
 \usetheme{Madrid}
@@ -77,45 +82,13 @@
 		\titlepage
 	\end{frame}
 	
+	
 	\begin{frame}
-		\frametitle{Previous Work}
-		\framesubtitle{Decoding PDF files}
-		
-		% 1. TOP ROW: TWO COLUMNS (50% each)
-		\begin{columns}
-			% --- Left Column (Row 1, Col 1) ---
-			\begin{column}{0.48\textwidth}
-				\centering
-				\includegraphics[width=0.9\linewidth]{notasi-ayak-nem-slendro.png}
-				\footnotesize{Notasi gamelan Ayak-ayakan Nem Slendro pt. Nem}
-			\end{column}
-			
-			% --- Right Column (Row 1, Col 2) ---
-			\begin{column}{0.48\textwidth}
-				\centering
-				\includegraphics[width=0.9\linewidth]{cmap-font-balungan.png}
-				\footnotesize{Cmap font balungan.}
-			\end{column}
-		\end{columns}
-		
-		% Optional: Add a small vertical space between the rows
-		\vspace{0.5em}
-		\hrule % Optional: A horizontal line to visually separate the rows
-		
-		% 2. BOTTOM ROW: ONE MERGED COLUMN
-		% We use \vfill to push the content to the bottom and a minipage to control its width
-		\vfill 
-		\begin{minipage}{\textwidth} % Minipage spans the full text width
-			\centering
-			
-			\begin{figure}
-				\centering
-				\includegraphics[width=0.75 \linewidth]{notasi-ayak-nem-slendro-decoded.png}
-				\caption{Notasi ayakan decoded}			
-			\end{figure}
-		\end{minipage}
-		
+		\frametitle{Rumusan Masalah}
+		Dalam pemodelan sekuensial, deretan notasi musik mengandung multi dimensi informasi. Namun, model LSTM mereduksi informasi koherensi antarnotasi sehingga hasil prediksi notasi menjadi tidak akurat. 
+		Kegagalan ini terlihat pada penelitian Syarif, A.M., dkk (2023) dan  Fanani A.Z., dkk. (2025) yang menggabungkan algoritma genetika tanpa operator crossover karena asumsi prematur terhadap kemampuan  LSTM dalam menghasilkan deret notasi musik gamelan. Akibatnya, model hanya mampu membuat sekuens notasi yang mirip secara statistik namun tidak logis.
 	\end{frame}
+
 	
 	\begin{frame}
 		\frametitle{Previous Work}
@@ -160,7 +133,7 @@
 				\begin{itemize}
 					\item  Total Songs : 189
 					\item  Laras : 2
-					\item  Cited in Research : 100\%
+					\item  Cited in Research (Q3-Q1) : 100 \%
 				\end{itemize}
 				
 			\end{column}
@@ -205,6 +178,45 @@
 		\begin{center}
 			\includegraphics[width=0.8\textwidth]{notation_heatmap.png}
 		\end{center}
+	\end{frame}
+		\begin{frame}
+		\frametitle{Dataset Extraction Strategy}
+		\framesubtitle{Decoding PDF files}
+		
+		% 1. TOP ROW: TWO COLUMNS (50% each)
+		\begin{columns}
+			% --- Left Column (Row 1, Col 1) ---
+			\begin{column}{0.48\textwidth}
+				\centering
+				\includegraphics[width=0.9\linewidth]{notasi-ayak-nem-slendro.png}
+				\footnotesize{Notasi gamelan Ayak-ayakan Nem Slendro pt. Nem}
+			\end{column}
+			
+			% --- Right Column (Row 1, Col 2) ---
+			\begin{column}{0.48\textwidth}
+				\centering
+				\includegraphics[width=0.9\linewidth]{cmap-font-balungan.png}
+				\footnotesize{Cmap font balungan.}
+			\end{column}
+		\end{columns}
+		
+		% Optional: Add a small vertical space between the rows
+		\vspace{0.5em}
+		\hrule % Optional: A horizontal line to visually separate the rows
+		
+		% 2. BOTTOM ROW: ONE MERGED COLUMN
+		% We use \vfill to push the content to the bottom and a minipage to control its width
+		\vfill 
+		\begin{minipage}{\textwidth} % Minipage spans the full text width
+			\centering
+			
+			\begin{figure}
+				\centering
+				\includegraphics[width=0.75 \linewidth]{notasi-ayak-nem-slendro-decoded.png}
+				\caption{Notasi ayakan decoded}			
+			\end{figure}
+		\end{minipage}
+		
 	\end{frame}
 	% ============================================
 	% SLIDE 1: Overview (Compact)
@@ -357,17 +369,24 @@
 	\end{frame}
 
 	% Slide 1: Compact Overview
-	\begin{frame}[fragile]{Abiyasa: Gamelan Digitalization}
+	\begin{frame}[fragile]{Abiyasa: Gamelan Preset Dataset}
+		\tiny
 		\begin{columns}[c]
 			\begin{column}{0.40\textwidth}
 				\textbf{Capabilities}
 				\begin{itemize}
 					\item \textbf{Extraction}: PDF to data.
 					\item \textbf{Systems}: Balungan \& Kepatihan.
-					\item \textbf{Encoders}: GSPN/QAP.
+					\item \textbf{Encoders}: GSPN / QAP / OVENS / GENS.
 				\end{itemize}
 				\textbf{Install}
-				\begin{lstlisting}[language=bash]
+				\begin{lstlisting}[
+					language=bash, 
+					backgroundcolor=\color{black}, 
+					basicstyle=\tiny\color{white}\ttfamily, 
+					frame=single,
+					rulecolor=\color{gray} % Optional: adds a border so it doesn't disappear into dark themes
+					]
 pip install abiyasa
 				\end{lstlisting}
 			\end{column}
@@ -426,99 +445,31 @@ for item in data:
 	\scriptsize \textit{Based on research by Syarif et al. (2020)}
 	\end{frame}
 
-	\begin{frame}
-		\frametitle{Insight}
-		\framesubtitle{Chapter 4. Music Structure Analysis}
-		\begin{columns}
-			
-			% --- First Column (Left Image) srepeg-tlutur-sl-sanga.png--- structural-analysis.png
-			\begin{column}{0.5 \textwidth}
-				\begin{figure}
-					\centering
-					\includegraphics[width=1 \linewidth]{structural-analysis.png}
-					\caption{4.1. From the book}
-				\end{figure}
-			\end{column}
-			
-			% --- Second Column (Right Image) ---
-			\begin{column}{0.5 \textwidth}
-				The General Goal of Music Structural Analysis
-				\begin{itemize}
-					\item  Temporal Segmentation
-					\item  Structural Identification
-					\item  Categorical Grouping
-				\end{itemize}
-				The methods
-				\begin{itemize}
-					\item  Repition-based
-					\item  Novelty-based
-					\item  Homogeneity-based
-				\end{itemize}
-				
-			\end{column}
-		\end{columns}
+	\begin{frame}[fragile]{Other Encoding Strategy}
+		\centering
+		\tiny % Very small font size
+		\begin{tabular}{>{\RaggedRight}p{0.30\linewidth}>{\centering}p{0.15\linewidth}>{\RaggedRight}p{0.35\linewidth}}
+			\toprule
+			\textbf{Research} & \textbf{Encoding} & \textbf{Note} \\
+			\midrule
+			\href{https://doi.org/10.17977/um018v6i12023p41-56}{10.17977/um018v6i12023p41-56} & GENSS & Gendhing Structure Sequence \\
+			\href{https://doi.org/10.26555/ijain.v9i2.1031}{10.26555/ijain.v9i2.1031} & GENSS & Gendhing Structure Sequence \\
+			\href{https://doi.org/10.1109/ICAMIMIA60881.2023.10427579}{10.1109/ICAMIMIA60881.2023.10427579} & GENSS & Gendhing Structure Sequence \\
+			\href{https://doi.org/10.37134/mjm.vol9.7.2020}{10.37134/mjm.vol9.7.2020} & GSPN & Gamelan Scientific Pitch Notation \\
+			\href{https://doi.org/10.1109/ACCESS.2024.3457880}{10.1109/ACCESS.2024.3457880} & QAP & Question Answer Phrase \\
+			\href{https://doi.org/10.12720/jait.14.1.26-38}{10.12720/jait.14.1.26-38} & GSPN & Gamelan Scientific Pitch Notation \\
+			\href{https://doi.org/10.1109/ACCESS.2025.3578449}{10.1109/ACCESS.2025.3578449} & OVENS & Odd-Even Pattern Sequence \\
+			\bottomrule
+		\end{tabular}
 	\end{frame}
-	\begin{frame}
-		\frametitle{Insight}
-		\framesubtitle{Chapter 4. Music Structure Analysis}
-		\begin{columns}
-			
-			% --- First Column (Left Image) srepeg-tlutur-sl-sanga.png--- structural-analysis.png
-			\begin{column}{0.5 \textwidth}
-				\begin{figure}
-					\centering
-					\includegraphics[width=1 \linewidth]{structure-annotatoins-labeling-evaluation.png}
-					\caption{4.30. From the book}
-				\end{figure}
-			\end{column}
-			
-			% --- Second Column (Right Image) ---
-			\begin{column}{0.5 \textwidth}
-				Evaluation
-				\begin{itemize}
-					\item  Precision, Recall, F-Measure
-					\item  Structure Annotations
-					\item  Labeling Eval.
-					\item  Boundary Eval.
-					\item  Thumbnail Eval.
-				\end{itemize}
-				
-			\end{column}
-		\end{columns}
-	\end{frame}
-	\begin{frame}
-		\frametitle{Insight}
-		
-		
-		Subjective evaluation are
-		\begin{itemize}
-			\item  Unscalable
-			\item  Inability to Guide Improvement
-			\item  Missing the "Why"
-		\end{itemize}
-	 	\vspace{1cm}
-		\tiny de Berardinis, J., Cangelosi, A. and Coutinho, E. (2022) “Measuring the Structural Complexity of Music: From Structural Segmentations to the Automatic Evaluation of Models for Music Generation,” IEEE/ACM Transactions on Audio, Speech, and Language Processing, 30, pp. 1963–1976. Available at: https://doi.org/10.1109/TASLP.2022.3178203.
-	\end{frame}
-
 	
-	
-	\begin{frame}
-		\frametitle{Insight}
-		\tiny Kader FB, Karmaker S. A Survey on Evaluation Metrics for Music Generation [Internet]. arXiv; 2025 [cited 2025 Nov 19]. Available from: http://arxiv.org/abs/2509.00051
-	
-		\begin{figure}
-			\centering
-			\includegraphics[width=1 \linewidth]{taxonomy-evaluation-symbolic-music-generation}
-			\caption{Cuplikan taxonomy evaluasi}			
-		\end{figure}
-	\end{frame}
 
 	
 	\begin{frame}
-		\frametitle{P.O.C}
+		\frametitle{What Next?}
 		\begin{itemize}
-			\item Experimental evaluasi struktur pada dataset
-			\item Experimental evaluasi struktur pada previous paper
+			\item Menganalisa pola hubungan antar notasi
+			\item Eksperimental membangun kembali penelitian sebelumnya 
 		\end{itemize}
 	\end{frame}
 	
